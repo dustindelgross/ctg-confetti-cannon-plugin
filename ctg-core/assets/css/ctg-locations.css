@@ -1,0 +1,153 @@
+/**
+* CTG Locations Styles
+*
+* Description: All the styles associated with CTG Locations.
+* This also contains utility classes for use in other stylesheets.
+*
+*/
+@import url("https://use.typekit.net/tnv7tsi.css");
+
+/*---------- Javascript Classes ----------*/
+/**
+* Utility Classes and styles for use in Javascript.
+*/
+#ctg-confetti-canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(5, 5, 5, 1) !important;
+}
+
+.ctg-confetti-rotating-letter {
+	white-space: pre;
+	display: inline-block;
+	opacity: 0;
+}
+
+.ctg-confetti-rotating-letter.active {
+	animation: float-in-top 0.5s ease-in-out both;
+}
+
+.ctg-confetti-rotating-letter.out {
+	animation: float-out-top 0.5s ease-in-out both;
+}
+
+.ctg-scroll-based-heading {
+	display: flex;
+	flex-flow: row wrap;
+	text-transform: capitalize;
+	align-items: center;
+	justify-content:center;
+	position: relative;
+	width: 100%;
+}
+
+.ctg-scroll-based-heading:after {
+	content: '';
+	display: block;
+	height: 4px;
+	background-color: #dbb778;
+	transition: 1s ease-in-out;
+	width: 0;
+	max-width:500px;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+}
+
+.ctg-scroll-based-heading.in:after {
+	width: 100%;
+}
+
+#ctg-confetti-text-rotation-heading {
+	display: block;
+	width: 100%;
+}
+
+#ctg-confetti-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	z-index: 12;
+	text-align: center;
+	color: #fff;
+	background-color: rgba(42, 42, 42, .5) !important;
+}
+
+#ctg-confetti-text h1 {
+	color: #fff;
+}
+
+#ctg-confetti-canvas-container {
+	position: relative;
+	display: block;
+	width: 100vw;
+	height: 100vh;
+}
+
+.ctg-content-card {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 2rem;
+	border-radius: 1rem;
+	box-shadow: 0px 0px 10px rgba(42, 42, 42, .5);
+}
+
+.ctg-owner-headshot-container {
+	height: 250px;
+	width: 250px;
+	display:flex;
+	position:relative;
+	justify-content:center;
+	align-items: center;
+	transform-style: preserve-3d;
+	transition: .5s ease-in-out;
+}
+
+.ctg-owner-headshot, .ctg-flip-callout {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+
+.ctg-flip-callout {
+	border-radius: 50%;
+	transform: rotateY(180deg);
+	z-index: 1;
+	background-color: #2a2a2a;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	color: white;
+	cursor: pointer;
+}
+
+.ctg-owner-headshot {
+	z-index: 2;
+}
+
+.ctg-owner-headshot-wrapper:hover .ctg-owner-headshot-container {
+	transform: rotateY(180deg);
+}
+
+.ctg-confetti-particle {
+	width: 5px;
+	height: 5px;
+	display:block;
+	aspect-ratio: 1;
+	border-radius: 5px;
+	position: relative;
+	background-color: #dbb778;
+	transform: translate(0,0);
+	transition: .5s ease-in-out;
+}
